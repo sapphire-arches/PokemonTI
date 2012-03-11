@@ -1,5 +1,7 @@
   This directory contains any in-house utilities created to ease the writing of
 PokemonTI. Currently this only includes the Bitmap editor. To use it, you
 can build it using Eclipse or run from the comand line. Program usage is:
-	java -jar Editor.jar -b<Draw size in pixels> -w<output width> -h<output height>
+    java -jar Editor.jar -b<Draw size in pixels> -w<output width> -h<output height>
 
+  Pressing "s" in the program opens a save dialog. There is currently no way to
+reopen saved files. It's on the list, but not a prority right now.
