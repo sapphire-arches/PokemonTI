@@ -38,7 +38,7 @@ public class SaveKeyListner implements KeyListener {
 		String fname = JOptionPane.showInputDialog("Enter filename: ");
 		if (fname.startsWith("{RES}")) {
 			//TODO: MAke this more portable?
-			fname = "../../res/" + fname.substring(4);
+			fname = "../../res/" + fname.substring(5);
 		}
 		try {
 			BufferedWriter bw = new BufferedWriter(new FileWriter(new File(
