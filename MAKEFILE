@@ -1,2 +1,0 @@
-all:
-	zcc +83xansi -lm -startup=2 -create-app -o ./build/pokemon ./src/main.c
