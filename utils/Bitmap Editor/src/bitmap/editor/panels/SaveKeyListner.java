@@ -36,6 +36,10 @@ public class SaveKeyListner implements KeyListener {
 
 	public void saveHexString() {
 		String fname = JOptionPane.showInputDialog("Enter filename: ");
+		if (fname.contains("{RES}")) {
+			//TODO: MAke this more portable?
+			fname.replaceAll("{RES}", "../../res");
+		}
 		try {
 			BufferedWriter bw = new BufferedWriter(new FileWriter(new File(
 					fname)));
