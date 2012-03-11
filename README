@@ -12,8 +12,10 @@ problems.
 BUILDING:
 
     1. Make sure that you have GNU MAKE, and z88dk in your PATH.
-    2. Type make.
-    3. Use TI-Connect, TI-Graphlink, or TILP to upload the resulting
+    2. CD to the directory that contains this file.
+    3. type "mkdir build" (Without the quotes, obviously.)
+    4. Type make.
+    5. Use TI-Connect, TI-Graphlink, or TILP to upload the resulting
         POKE.8xp file to your calculator.
 	
 ------------------------------------------------------------------------------
