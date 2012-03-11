@@ -1,0 +1,3 @@
+  This directory is where all of the .hex files from the bitmap maker will go.
+Once the bitmap maker has an export format, we will put those files here as
+well.
