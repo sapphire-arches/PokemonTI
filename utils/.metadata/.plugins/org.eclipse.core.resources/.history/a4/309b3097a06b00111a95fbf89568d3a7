@@ -1,7 +1,0 @@
-package bitmap.editor.panels;
-
-import javax.swing.JPanel;
-
-public class BitmapEditorPanel extends JPanel {
-
-}

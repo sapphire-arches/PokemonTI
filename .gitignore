@@ -18,7 +18,8 @@ build/*
 *.dmg
 *.gz
 *.iso
-*.jar
+#The default file has .jar here, but I want the .jar's for the utils to be
+# in the repo.
 *.rar
 *.tar
 *.zip

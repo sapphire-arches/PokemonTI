@@ -1,0 +1,5 @@
+  This directory contains any in-house utilities created to ease the writing of
+PokemonTI. Currently this only includes the Bitmap editor. To use it, you
+can build it using Eclipse or run from the comand line. Program usage is:
+	java -jar Editor.jar -b<Draw size in pixels> -w<output width> -h<output height>
+

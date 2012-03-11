@@ -9,36 +9,37 @@ import java.awt.event.MouseListener;
 import javax.swing.JPanel;
 
 public class BitmapEditorPanel extends JPanel implements MouseListener {
-	public static int BOX_SIZE = 16;
-	public boolean [] pixstatus;
-	
+	public int boxSize = 16;
+	public boolean[] pixstatus;
+
 	public int width;
 	public int height;
-	
-	public BitmapEditorPanel (int width, int height) {
+
+	public BitmapEditorPanel(int width, int height, int boxSize) {
 		this.width = width;
 		this.height = height;
-		this.pixstatus = new boolean [width * height];
-		this.setPreferredSize(new Dimension(width * BOX_SIZE, height * BOX_SIZE));
+		this.boxSize = boxSize;
+		this.pixstatus = new boolean[width * height];
+		this.setPreferredSize(new Dimension(width * boxSize, height * boxSize));
 	}
-	
-	public void paint (Graphics g) {
+
+	public void paint(Graphics g) {
 		g.setColor(Color.white);
-		g.fillRect(0, 0, getWidth (), getHeight ());
-		
-		g.setColor (Color.black);
-		
+		g.fillRect(0, 0, getWidth(), getHeight());
+
+		g.setColor(Color.black);
+
 		for (int x = 0; x < width; ++x) {
 			for (int y = 0; y < height; ++y) {
-				if (pixstatus [x + width * y])
-					g.fillRect (x * BOX_SIZE, y * BOX_SIZE, BOX_SIZE, BOX_SIZE);
+				if (pixstatus[x + width * y])
+					g.fillRect(x * boxSize, y * boxSize, boxSize, boxSize);
 			}
 		}
 	}
 
 	@Override
 	public void mouseClicked(MouseEvent e) {
-		//TODO Implement BitmapEditorPanel.mouseClicked ()
+		// TODO Implement BitmapEditorPanel.mouseClicked ()
 	}
 
 	@Override
@@ -53,8 +54,8 @@ public class BitmapEditorPanel extends JPanel implements MouseListener {
 
 	@Override
 	public void mousePressed(MouseEvent e) {
-		pixstatus [(e.getX () / BOX_SIZE) + width * (e.getY() / BOX_SIZE)] = 
-				!pixstatus [(e.getX () / BOX_SIZE) + width * (e.getY() / BOX_SIZE)];
+		pixstatus[(e.getX() / boxSize) + width * (e.getY() / boxSize)] = !pixstatus[(e
+				.getX() / boxSize) + width * (e.getY() / boxSize)];
 	}
 
 	@Override

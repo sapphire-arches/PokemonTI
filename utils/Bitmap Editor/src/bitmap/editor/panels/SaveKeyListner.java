@@ -7,13 +7,12 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
-import javax.swing.JDialog;
 import javax.swing.JOptionPane;
 
 public class SaveKeyListner implements KeyListener {
 	public BitmapEditorPanel bep;
-	
-	public SaveKeyListner (BitmapEditorPanel bep) {
+
+	public SaveKeyListner(BitmapEditorPanel bep) {
 		this.bep = bep;
 	}
 
@@ -26,34 +25,36 @@ public class SaveKeyListner implements KeyListener {
 	@Override
 	public void keyReleased(KeyEvent arg0) {
 		if (arg0.getKeyCode() == KeyEvent.VK_S) {
-			save ();
+			saveHexString();
 		}
 	}
 
 	@Override
 	public void keyTyped(KeyEvent arg0) {
-		//TODO Auto-generated method stub
+		// TODO Auto-generated method stub
 	}
-	
-	public void save () {
+
+	public void saveHexString() {
 		String fname = JOptionPane.showInputDialog("Enter filename: ");
 		try {
-			BufferedWriter bw = new BufferedWriter(new FileWriter(new File (fname)));
-			//Linearize pixbuf.
+			BufferedWriter bw = new BufferedWriter(new FileWriter(new File(
+					fname)));
+			// Linearize pixbuf.
 			int len = bep.pixstatus.length;
 			if (len % 8 != 0)
-				len += len % 8; //Make sure we have enough bytes for all the booleans.
+				len += len % 8; // Make sure we have enough bytes for all the
+								// booleans.
 			byte[] buff = new byte[(len / 8) + 1];
 			for (int i = 0; i < bep.pixstatus.length; ++i) {
-				buff [i / 8] |= (bep.pixstatus[i]) ? (1 << (i % 8)) : 0;
+				buff[i / 8] |= (bep.pixstatus[i]) ? (1 << (i % 8)) : 0;
 			}
-			//Write the buffer out as as series of hex strings.
+			// Write the buffer out as as series of hex strings.
 			for (int i = 0; i < buff.length; ++i) {
 				bw.write("0x");
-				bw.write (Integer.toHexString(0xFF & buff [i]));
+				bw.write(Integer.toHexString(0xFF & buff[i]));
 				bw.write(", ");
 			}
-			bw.close ();
+			bw.close();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
