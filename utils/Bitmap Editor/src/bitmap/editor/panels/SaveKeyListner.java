@@ -36,9 +36,9 @@ public class SaveKeyListner implements KeyListener {
 
 	public void saveHexString() {
 		String fname = JOptionPane.showInputDialog("Enter filename: ");
-		if (fname.contains("{RES}")) {
+		if (fname.startsWith("{RES}")) {
 			//TODO: MAke this more portable?
-			fname.replaceAll("{RES}", "../../res");
+			fname = "../../res/" + fname.substring(4);
 		}
 		try {
 			BufferedWriter bw = new BufferedWriter(new FileWriter(new File(
@@ -50,7 +50,7 @@ public class SaveKeyListner implements KeyListener {
 								// booleans.
 			byte[] buff = new byte[(len / 8) + 1];
 			for (int i = 0; i < bep.pixstatus.length; ++i) {
-				buff[i / 8] |= (bep.pixstatus[i]) ? (1 << (i % 8)) : 0;
+				buff[i / 8] |= (bep.pixstatus[i]) ? (1 >> (i % 8)) : 0;
 			}
 			// Write the buffer out as as series of hex strings.
 			for (int i = 0; i < buff.length; ++i) {
