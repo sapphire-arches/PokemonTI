@@ -36,6 +36,7 @@ public class Main {
 		frame.addKeyListener(new SaveKeyListner(b));
 		frame.pack();
 		frame.setResizable(false);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setVisible(true);
 
 		while (true) {
