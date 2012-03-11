@@ -1,0 +1,11 @@
+package bitmap.editor.panels;
+
+import javax.swing.JPanel;
+
+public class BitmapEditorPanel extends JPanel {
+	public boolean [][] pixstatus;
+	
+	public BitmapEditorPanel (int width, int height) {
+		this.pixstatus = new boolean [width][height];
+	}
+}

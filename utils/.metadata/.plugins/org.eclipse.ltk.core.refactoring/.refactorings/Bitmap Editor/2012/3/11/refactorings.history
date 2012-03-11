@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;bitmap.editor.panels.KeyListner&apos; to &apos;SaveKeyListner&apos;&#x0A;- Original project: &apos;Bitmap Editor&apos;&#x0A;- Original element: &apos;bitmap.editor.panels.KeyListner&apos;&#x0A;- Renamed element: &apos;bitmap.editor.panels.SaveKeyListner&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;KeyListner&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;bitmap.editor.panels{KeyListner.java[KeyListner" matchStrategy="1" name="SaveKeyListner" qualified="false" references="true" similarDeclarations="false" stamp="1331489383189" textual="false" version="1.0"/>
+</session>

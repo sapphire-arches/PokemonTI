@@ -1,0 +1,67 @@
+package bitmap.editor.panels;
+
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Graphics;
+import java.awt.Point;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
+public class BitmapEditorPanel extends JPanel implements MouseListener {
+	public boolean [][] pixstatus;
+	
+	public BitmapEditorPanel (int width, int height) {
+		this.pixstatus = new boolean [width][height];
+		this.setPreferredSize(new Dimension(width * 8, height * 8));
+	}
+	
+	public void paint (Graphics g) {
+		g.setColor(Color.white);
+		g.fillRect(0, 0, getWidth (), getHeight ());
+		
+		g.setColor (Color.black);
+		
+		for (int x = 0; x < pixstatus.length; ++x) {
+			for (int y = 0; y < pixstatus [x].length; ++y) {
+				if (pixstatus [x][y])
+					g.fillRect (x * 8, y * 8, 8, 8);
+			}
+		}
+	}
+
+	@Override
+	public void mouseClicked(MouseEvent e) {
+		//TODO Implement BitmapEditorPanel.mouseClicked ()
+	}
+
+	@Override
+	public void mouseEntered(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseExited(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mousePressed(MouseEvent e) {
+		Point p = getCorrectedPosition (e);
+		pixstatus [e.getX () / 8] [e.getY() / 8] = !pixstatus [e.getX () / 8] [e.getY () / 8];
+	}
+
+	private Point getCorrectedPosition(MouseEvent e) {
+		return e.getPoint().translate(0, );
+	}
+
+	@Override
+	public void mouseReleased(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+}
