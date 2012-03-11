@@ -1,0 +1,34 @@
+OVERVIEW: 
+
+	The goal of this project is to create a playable Pokemon-like game on the
+TI-83, TI-83+, TI-83+ Silver Edition, TI-84, TI-84+, and the TI-84+ Silver
+Edition. We are using z88dk (www.z88dk.org) compile. The game is written in C
+using z88dk's sprite library for graphics. The default target is MirageOS. By
+editing the makefile, it is probably possible to change this target with few
+problems.
+
+------------------------------------------------------------------------------
+
+BUILDING:
+
+	1. Make sure that you have GNU MAKE, and z88dk in your PATH.
+	2. Type make.
+	3. Use TI-Connect, TI-Graphlink, or TILP to upload the resulting
+		POKE.8xp file to your calculator.
+	
+------------------------------------------------------------------------------
+
+RUNNING:
+	1. Make sure you have MirageOS on your calcuator. You can get it from
+		the detached solutions website 
+			(http://www.detachedsolutions.com/mirageos/)
+		or TICalc.org
+			(http://www.ticalc.org/archives/files/fileinfo/139/13949.html)
+	2. Open MirageOS (Press APPS, then ON)
+	3. If this is the first time you have opened MirageOS, you will be greeted
+		with a splash screen. Press 2ND or ENTER to continue.
+	4. Press ENTER to open the MAIN folder.
+	5. You should see an option called POKE. Selected it and press ENTER or
+		2ND.
+
+------------------------------------------------------------------------------
