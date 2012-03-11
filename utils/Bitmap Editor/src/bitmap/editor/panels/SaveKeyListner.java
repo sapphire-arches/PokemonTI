@@ -36,8 +36,10 @@ public class SaveKeyListner implements KeyListener {
 
 	public void saveHexString() {
 		String fname = JOptionPane.showInputDialog("Enter filename: ");
+		if (fname == null || fname.equals(""))
+			return; // Handle the case where we don't enter anything into fname.
 		if (fname.startsWith("{RES}")) {
-			//TODO: MAke this more portable?
+			// TODO: MAke this more portable?
 			fname = "../../res/" + fname.substring(5);
 		}
 		try {
@@ -46,12 +48,14 @@ public class SaveKeyListner implements KeyListener {
 			// Linearize pixbuf.
 			int len = bep.pixstatus.length;
 			if (len % 8 != 0)
-				len += len % 8; // Make sure we have enough bytes for all the
+				len += (len % 8) + 8; // Make sure we have enough bytes for all the
 								// booleans.
-			byte[] buff = new byte[(len / 8) + 1];
+			byte[] buff = new byte[(len / 8)];
 			for (int i = 0; i < bep.pixstatus.length; ++i) {
-				buff[i / 8] |= (bep.pixstatus[i]) ? (1 >> (i % 8)) : 0;
+				buff[i / 8] |= (bep.pixstatus[i]) ? (1 << (i % 8)) : 0;
 			}
+			// Get the byte order straight.
+			reorder(buff);
 			// Write the buffer out as as series of hex strings.
 			for (int i = 0; i < buff.length; ++i) {
 				bw.write("0x");
@@ -62,6 +66,21 @@ public class SaveKeyListner implements KeyListener {
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		}
+	}
+
+	/**
+	 * Fixes the byte order of orig
+	 * 
+	 * @param orig
+	 *            The buffer to fix
+	 */
+	private void reorder(byte[] orig) {
+		for (int i = 0; i < orig.length; ++i) {
+			// Fix the bit order.
+			byte b = orig[i];
+			b = (byte) (((b * 0x0802L & 0x22110L) | (b * 0x8020L & 0x88440L)) * 0x10101L >> 16);
+			orig[i] = b;
 		}
 	}
 }
