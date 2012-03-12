@@ -29,10 +29,11 @@ public class Main {
 
 	public static void main(String[] args) throws InterruptedException {
 		parseArgs(args);
-		JFrame frame = new JFrame();
+		JFrame frame = new JFrame("Bitmap Editor");
 		BitmapEditorPanel b = new BitmapEditorPanel(w, h, s);
 		frame.getContentPane().add(b);
 		frame.getContentPane().addMouseListener(b);
+		frame.getContentPane().addMouseMotionListener(b);
 		frame.addKeyListener(new SaveKeyListner(b));
 		frame.pack();
 		frame.setResizable(false);

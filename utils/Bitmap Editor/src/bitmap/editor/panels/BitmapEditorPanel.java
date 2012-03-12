@@ -5,15 +5,18 @@ import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
 
 import javax.swing.JPanel;
 
-public class BitmapEditorPanel extends JPanel implements MouseListener {
+public class BitmapEditorPanel extends JPanel implements MouseListener, MouseMotionListener {
 	public int boxSize = 16;
 	public boolean[] pixstatus;
 
 	public int width;
 	public int height;
+	
+	public int mx,my,mb;
 
 	public BitmapEditorPanel(int width, int height, int boxSize) {
 		this.width = width;
@@ -54,12 +57,32 @@ public class BitmapEditorPanel extends JPanel implements MouseListener {
 
 	@Override
 	public void mousePressed(MouseEvent e) {
-		pixstatus[(e.getX() / boxSize) + width * (e.getY() / boxSize)] = !pixstatus[(e
+		mb = e.getButton();
+		if (mb == MouseEvent.BUTTON2)
+			pixstatus[(e.getX() / boxSize) + width * (e.getY() / boxSize)] = true;
+		else if (mb == MouseEvent.BUTTON3)
+			pixstatus[(e.getX() / boxSize) + width * (e.getY() / boxSize)] = false;
+		else
+			pixstatus[(e.getX() / boxSize) + width * (e.getY() / boxSize)] = !pixstatus[(e
 				.getX() / boxSize) + width * (e.getY() / boxSize)];
 	}
 
 	@Override
 	public void mouseReleased(MouseEvent e) {
 		// TODO Auto-generated method stub
+	}
+
+	@Override
+	public void mouseDragged(MouseEvent e) {
+		if (mb == MouseEvent.BUTTON2)
+			pixstatus[(e.getX() / boxSize) + width * (e.getY() / boxSize)] = true;
+		else if (mb == MouseEvent.BUTTON3)
+			pixstatus[(e.getX() / boxSize) + width * (e.getY() / boxSize)] = false;
+	}
+
+	@Override
+	public void mouseMoved(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
 	}
 }

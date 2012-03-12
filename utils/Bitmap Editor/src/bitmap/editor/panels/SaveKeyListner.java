@@ -78,9 +78,12 @@ public class SaveKeyListner implements KeyListener {
 	private void reorder(byte[] orig) {
 		for (int i = 0; i < orig.length; ++i) {
 			// Fix the bit order.
-			byte b = orig[i];
-			b = (byte) (((b * 0x0802L & 0x22110L) | (b * 0x8020L & 0x88440L)) * 0x10101L >> 16);
-			orig[i] = b;
+			int b = 0xFF & orig[i];
+			Integer.reverse(b);
+			System.out.print (Integer.toHexString(b)); System.out.print(" ");
+			//b >>= 24; //Shift over back into byte space.
+			System.out.println (Integer.toHexString(b));
+			orig [i] = (byte)b;
 		}
 	}
 }
