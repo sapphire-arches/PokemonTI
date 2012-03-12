@@ -1,10 +1,9 @@
 /****************************************
 * This file contains or points to all of
 * the sprites used by the game, anywhere
-* ever. Or it should. If some dumbass
-* puts the sprites somewhere else, the
-* maintainer of the PokemonTI repo will
-* find them and kill them. Slowly.
+* ever. Or it should. Report any arrays
+* suspect to be chars not mentioned in
+* this file to the repo owner immediatly.
 *
 * Also, all sprite deffinitions should
 * start with spr_
@@ -25,5 +24,6 @@ char spr_smile[] =
 	0x3C  /* defb @00111100 ;  oooo   */
 };
 
+#include "spr_tiles.h"
 
 #endif

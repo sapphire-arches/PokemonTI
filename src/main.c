@@ -6,6 +6,6 @@
 
 main()
 {
-	putsprite (spr_or, 0, 0, spr_smile);
+	putsprite (spr_or, 0, 0, spr_tile_grass);
 	getk ();
 }
