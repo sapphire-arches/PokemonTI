@@ -79,9 +79,9 @@ public class SaveKeyListner implements KeyListener {
 		for (int i = 0; i < orig.length; ++i) {
 			// Fix the bit order.
 			int b = 0xFF & orig[i];
-			Integer.reverse(b);
+			b = Integer.reverse(b);
 			System.out.print (Integer.toHexString(b)); System.out.print(" ");
-			//b >>= 24; //Shift over back into byte space.
+			b >>= 24; //Shift over back into byte space.
 			System.out.println (Integer.toHexString(b));
 			orig [i] = (byte)b;
 		}

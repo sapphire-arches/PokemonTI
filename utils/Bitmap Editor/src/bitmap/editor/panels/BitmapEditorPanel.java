@@ -74,6 +74,8 @@ public class BitmapEditorPanel extends JPanel implements MouseListener, MouseMot
 
 	@Override
 	public void mouseDragged(MouseEvent e) {
+		if (e.getX () < 0 || e.getX () >= width || e.getY () < 0 || e.getY () >= height) //make sure we don't write out of range values.
+			return;
 		if (mb == MouseEvent.BUTTON2)
 			pixstatus[(e.getX() / boxSize) + width * (e.getY() / boxSize)] = true;
 		else if (mb == MouseEvent.BUTTON3)
