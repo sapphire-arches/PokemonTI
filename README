@@ -26,7 +26,9 @@ RUNNING:
             (http://www.detachedsolutions.com/mirageos/)
         or TICalc.org
             (http://www.ticalc.org/archives/files/fileinfo/139/13949.html)
-    2. Open MirageOS (Press APPS, then ON)
+    2. Open MirageOS. If you have started the app before, press APPS, then On.
+            Otherwise, press APPS, then scroll through the list till you see
+            it. Then press Enter.
     3. If this is the first time you have opened MirageOS, you will be greeted
         with a splash screen. Press 2ND or ENTER to continue.
     4. Press ENTER to open the MAIN folder.
