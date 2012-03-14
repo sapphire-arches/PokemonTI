@@ -36,3 +36,7 @@ build/*
 ehthumbs.db
 Icon?
 Thumbs.db
+#Gedit autosave files
+*.h~
+*.c~
+*.hex~
