@@ -6,5 +6,4 @@
 #include <stdlib.h>
 #include <games.h>
 #include <limits.h>
-#include "sprites.h"
-#include "map/map.h"
+#include "ren/renderer.h"
