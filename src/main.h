@@ -7,3 +7,4 @@
 #include <games.h>
 #include <limits.h>
 #include "sprites.h"
+#include "map/map.h"
