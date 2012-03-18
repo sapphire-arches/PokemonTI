@@ -7,7 +7,7 @@
 main()
 {
 	char x, y;
-	putsprite (SPR_OR, 0, 0, spr_wait);
+	putsprite (SPR_OR, 10, 10, spr_wait);
 	for (x = 0; x < MAP_WIDTH; ++x) {
 		for (y = 0; y < MAP_HEIGHT; ++y) {
 			if (rand () < RAND_MAX / 4) {
