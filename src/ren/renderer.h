@@ -13,4 +13,6 @@
 
 extern void ren_draw_map (int xStart, int yStart);
 
+extern void ren_clear_screen (void);
+
 #endif

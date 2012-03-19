@@ -6,4 +6,5 @@
 #include <stdlib.h>
 #include <games.h>
 #include <limits.h>
+#include <malloc.h>
 #include "ren/renderer.h"

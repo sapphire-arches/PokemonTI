@@ -4,10 +4,9 @@
 
 #include "main.h"
 
-main()
-{
+void init (void) {
 	char x, y;
-	putsprite (SPR_OR, 10, 10, spr_wait);
+	
 	for (x = 0; x < MAP_WIDTH; ++x) {
 		for (y = 0; y < MAP_HEIGHT; ++y) {
 			if (rand () < RAND_MAX / 4) {
@@ -17,6 +16,13 @@ main()
 			}
 		}
 	}
+}
+
+void main()
+{	
+	putsprite (SPR_OR, 10, 10, spr_wait);
+	
+	init ();
 	
 	ren_draw_map (0, 0);
 	
