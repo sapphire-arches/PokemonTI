@@ -1,5 +1,5 @@
 #Variable controls build target.
-TAR=+ti8xansi #change to +ti83ansi to build for TI83's. This should work for all + and
+TAR=+ti8x #change to +ti83ansi to build for TI83's. This should work for all + and
 
 #List of all source files.
 SRC=src/ren/renderer.c src/map/map.c src/main.c

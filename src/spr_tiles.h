@@ -10,4 +10,10 @@ char spr_tile_grass[] =
 	0x4, 0x42, 0x20, 0x0, 0x4, 0x42, 0x20, 0x0
 };
 
+char spr_tile_blank [] = 
+{
+	8, 8,
+	0,0,0,0,0,0,0,0
+};
+
 #endif
