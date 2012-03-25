@@ -4,9 +4,9 @@ void ren_draw_map (int xStart, int yStart) {
     char x,y, mx, my;
     unsigned char val;
 
-    for (x = 0; x < 94; ++x) {
-        for (y = 0; y < 63; ++y) {
-            unplot (x, y);
+    for (x = 0; x < 94 / 2; ++x) {
+        for (y = 0; y < 62 / 2; ++y) {
+            undrawb (x, y, 94 - x, 62 - y);
         }
     }
 

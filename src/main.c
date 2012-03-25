@@ -25,8 +25,5 @@ void main() {
 
     ren_draw_map (0, 0);
 
-    while (1) {
-        
-    }
     getk ();
 }
