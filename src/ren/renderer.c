@@ -4,10 +4,9 @@ void ren_draw_map (int xStart, int yStart) {
     char x,y, mx, my;
     unsigned char val;
 
-    for (x = 0; x < 94 / 2; ++x) {
-        for (y = 0; y < 62 / 2; ++y) {
-            undrawb (x, y, 94 - x, 62 - y);
-        }
+    for (y = 0; y < 62 / 2; ++y) {
+        //Right shift is a multiply by two.
+        undrawb (0, y, 94, 61 - (y << 1));
     }
 
     for (x = 0; x < 94; x += 8) {
