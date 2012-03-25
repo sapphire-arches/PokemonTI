@@ -8,6 +8,7 @@
 #define RENDERER_H_INCLUDED
 
 #include <games.h>
+#include <graphics.h>
 #include "map/map.h"
 #include "sprites.h"
 
