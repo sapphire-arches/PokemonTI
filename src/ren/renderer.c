@@ -6,7 +6,7 @@ void ren_draw_map (int xStart, int yStart) {
 
     for (y = 0; y < 62 / 2; ++y) {
         //Right shift is a multiply by two.
-        undrawb (0, y, 94, 61 - (y << 1));
+        undrawb (y, y, 94 - (y << 1), 61 - (y << 1));
     }
 
     for (x = 0; x < 94; x += 8) {
