@@ -11,8 +11,9 @@ void ren_draw_map (int xStart, int yStart) {
 
     for (x = 0; x < 94; x += 8) {
         for (y = 0; y < 62; y += 8) {
-            mx = x / 8;
-            my = y / 8;
+            //Right shifts are multiplies by two. Should give a (tiny) speed boost.
+            mx = x >> 3;
+            my = y >> 3;
             val = map_map [map_getindex (xStart + mx, yStart + my)];
             putsprite (SPR_XOR, x, y, spr_tile_blank);
             switch (val) {
