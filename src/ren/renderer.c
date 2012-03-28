@@ -25,3 +25,9 @@ void ren_draw_map (int xStart, int yStart) {
         }
     }
 }
+
+void ren_clear_screen (void) {
+    for (y = 0; y < 31; ++y) {
+        undrawb (y, y, 61 - (y << 1), 93 - (y << 1));
+    }
+}
