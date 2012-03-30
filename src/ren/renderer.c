@@ -56,9 +56,7 @@ void ren_clear_area (char x, char y, char w, char h) {
 }
 
 void ren_draw_arrow (char x, char y) {
-    draw (x, y, x + 5, y);
-    draw (x + 1, y + 1, x + 4, y + 1);
-    draw (x + 1, y + 2, x + 4, y + 2);
-    draw (x + 3, y + 3, x + 3, y + 3);
+    draw (x, y, x, y + 4);
+    draw (x + 1, y + 1, x + 1, y + 3);
+    draw (x + 2, y + 2, x + 2, y + 2);
 }
-
