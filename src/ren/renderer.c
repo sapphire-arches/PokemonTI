@@ -1,5 +1,10 @@
 #include "renderer.h"
 
+#include <games.h>
+#include <graphics.h>
+#include "map/map.h"
+#include "sprites.h"
+
 void ren_draw_map (int xStart, int yStart) {
     char x,y, mx, my;
     unsigned char val;
