@@ -3,6 +3,10 @@
 \******************************/
 
 #include "main.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <games.h>
+#include "ren/renderer.h"
 
 void init (void) {
     char x, y;
