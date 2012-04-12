@@ -41,22 +41,14 @@ void ren_clear_screen (void) {
 void ren_clear_area (char x, char y, char w, char h) {
     //i - iterator
     //m - max
-    //f - flag (which way is greater? y or x)
-    char i, m, f;
+    char i, m;
     if (w > h)
-        f = 1;
+        m = w;
     else
-        f = 0;
-    m = (f) ? w : h;
+        m = h;
 
-    if (f) {
-        for (i = 0; i < w / 2; ++i) {
-            undrawb (x + i, y + i, w - 1 - (i << 1), h - 1 - (i << 1));
-        }
-    } else {
-        for (i = 0; i < h / 2; ++i) {
-            undrawb (x + i, y + i, w - 1 - (i << 1), h - 1 - (i << 1));
-        }
+    for (i = 0; i < m / 2; ++i) {
+        undrawb (x + i, y + i, w - 1 - (i << 1), h - 1 - (i << 1));
     }
 }
 
@@ -64,4 +56,8 @@ void ren_draw_arrow (char x, char y) {
     draw (x, y, x, y + 4);
     draw (x + 1, y + 1, x + 1, y + 3);
     draw (x + 2, y + 2, x + 2, y + 2);
+}
+
+void ren_draw_wait (char x, char y) {
+	putsprite (SPR_OR, x, y, spr_wait);
 }
